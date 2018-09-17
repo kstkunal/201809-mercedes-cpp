@@ -1,0 +1,26 @@
+
+
+https://github.com/vivekduttamishra/201809-mercedes-cpp
+
+
+
+
+class Date
+{
+	//store the value in dd/mm/yyyy
+
+
+	public :
+	int getDay(); //1-31
+	int getMonth(); //1-12
+	int getYear(); //1900--
+
+	//1-1-1900 was a Monday
+
+	char *getWeekDay(); //Sun-Sat
+
+	char *getMonthName(); //Jan-Dec
+
+	Date after(int day); //what date will come after given day
+
+}

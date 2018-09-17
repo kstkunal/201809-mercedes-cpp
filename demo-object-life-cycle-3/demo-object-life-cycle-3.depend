@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1537174739 source:c:\myworks\mytraining\corporate\201809-mercedes-cpp\demo-object-life-cycle-3\main.cpp
+	<iostream>
+	"Number.h"
+
+1537175078 c:\myworks\mytraining\corporate\201809-mercedes-cpp\demo-object-life-cycle-3\number.h
+

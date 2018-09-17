@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1537177531 source:c:\myworks\mytraining\corporate\201809-mercedes-cpp\demo-header-and-source\factorial.cpp
+
+1537178316 source:c:\myworks\mytraining\corporate\201809-mercedes-cpp\demo-header-and-source\main.cpp
+	<iostream>
+
+1537178335 source:c:\myworks\mytraining\corporate\201809-mercedes-cpp\demo-header-and-source\combination.cpp
+
