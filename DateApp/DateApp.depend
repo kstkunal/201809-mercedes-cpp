@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1537261071 source:c:\myworks\mytraining\corporate\201809-mercedes-cpp\dateapp\main.cpp
+	<iostream>
+	"Date.h"
+
+1537261618 c:\myworks\mytraining\corporate\201809-mercedes-cpp\dateapp\include\date.h
+	<iostream>
+
+1537261146 source:c:\myworks\mytraining\corporate\201809-mercedes-cpp\dateapp\src\date.cpp
+	"Date.h"
+
