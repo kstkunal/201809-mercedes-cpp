@@ -11,10 +11,10 @@ private:
 public:
     BankAccount(int accountNumber, char *name, char *password, double amount, double rate);
 
-    void deposit(double amount);
+    bool deposit(double amount);
 
     //actual function exists in cpp file
-    void withdraw(double amount, char * password);
+    bool withdraw(double amount, char * password);
 
     //inline implementation
     void creditInterest()
@@ -47,7 +47,7 @@ public:
     //char * getPassword() {return password;}
 
     //better authenticate
-    void authenticate(char *challengePassword); //I can tell if this password is correct or not
+    bool authenticate(char *challengePassword); //I can tell if this password is correct or not
 
     //no set passoword
 

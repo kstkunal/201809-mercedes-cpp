@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1537244174 source:c:\myworks\mytraining\corporate\201809-mercedes-cpp\bankaccountv4\bankaccount.cpp
+	<string.h>
+	<iostream>
+	"bankaccount.h"
+
+1537244499 c:\myworks\mytraining\corporate\201809-mercedes-cpp\bankaccountv4\bankaccount.h
+

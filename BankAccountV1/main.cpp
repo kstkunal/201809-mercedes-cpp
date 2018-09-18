@@ -9,6 +9,8 @@ int main()
 
     BankAccount a1(1,"Vivek","pass",20000,12);
 
+    a1.authenticate("hello");
+
     a1.show();
 
     a1.deposit(-1); //should fail

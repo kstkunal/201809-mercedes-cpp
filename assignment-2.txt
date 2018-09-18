@@ -1,0 +1,27 @@
+
+
+Bank
+
+	accounts
+	name
+	rate
+
+Operatios
+	OpenAccount  
+		* creates a BankAccount object
+		* stores the account object in accounts
+		* returns a account number only
+	CloseAccount
+		* using account number and password
+	Deposit
+		* account number and amount
+	Withdraw
+		* account number , amount, password
+	Transfer
+		* source account number , amount, password, target account number
+	CreditInterst 
+		* to all accounts
+	
+	ShowAccountList
+		* all account details
+		

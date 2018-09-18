@@ -4,6 +4,11 @@ using namespace std;
 
 #include "bankaccount.h"
 
+
+//intialize static fields in a cpp file (NOT IN A HEADER)
+
+double BankAccount::interestRate=9;
+
 BankAccount::BankAccount(int accountNumber, char *name, char *password, double amount, double rate)
 {
         this->accountNumber=accountNumber;
@@ -14,29 +19,43 @@ BankAccount::BankAccount(int accountNumber, char *name, char *password, double a
 }
 
 
-void BankAccount::deposit(double amount)
+bool BankAccount::deposit(double amount)
 {
     if(amount>0)
+    {
         balance+=amount;
+        return true;
+    }
     else
-        cout<<"amount must be greater than 0"<<endl;
+        return false; //failed.
 }
 
-void BankAccount::withdraw(double amount, char * password)
+bool BankAccount::withdraw(double amount, char * password)
 {
 
     if(amount<0)
-        cout<<"amount must be greater than 0"<<endl;
-    else if(amount>balance)
-        cout<<"insufficient funds"<<endl;
+        return false; //negative balance not allowed
+
+    if(!authenticate(password))
+    {
+        //cout<<"DEBUG: authentication failed"<<endl;
+        return false;
+    }
+
+
+    if(amount>balance)
+    {
+        //cout<<"DEBUG: amount:"<<amount<< " > balance:"<< balance <<endl;
+        return false;
+    }
+
     //else if(!authenticate(password))
     //    cout<<"invalid password"<<endl;
-    else
-    {
-        balance-=amount;
-        cout<<"please collect your cash";
 
-    }
+    balance-=amount;
+    return true;
+
+
 }
 
 void BankAccount::setName(char *newName)
@@ -53,16 +72,16 @@ void BankAccount::show()
        // <<"password:"<<password<<endl   //password shouldn't be shown
         <<"balance:"<<balance<<endl
         <<"rate:"<<interestRate
-        <<endl;
+        <<endl<<endl;
 }
 
-void BankAccount::authenticate(char* challengePassword)
+bool BankAccount::authenticate(char* challengePassword)
 {
 
     if( strcmp(this->password, challengePassword)==0)
-        cout<<"authentication success"<<endl;
+        return true;
     else
-        cout<<"authentication failed"<<endl;
+        return false;
 }
 
 void BankAccount::changePassword(char *oldPassword, char *newPassword)

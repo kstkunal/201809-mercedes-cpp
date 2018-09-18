@@ -2,19 +2,22 @@
 class BankAccount
 {
 private:
-    int accountNumber;
-    char name[50];
-    char password[50];
-    double balance;
-    double interestRate;
+    int accountNumber;  //4 byte
+    char name[50];      //50 byte
+    char password[50];  //50 byte
+    double balance;     //8 byte
+    static double interestRate; //shared and not owned by object 8 byte
 
 public:
-    BankAccount(int accountNumber, char *name, char *password, double amount, double rate);
 
-    void deposit(double amount);
+    //since interestRate is not a part of each individual object, the (shouldn't be) initialized in constructor
+
+    BankAccount(int accountNumber, char *name, char *password, double amount, double interestRate);
+
+    bool deposit(double amount);
 
     //actual function exists in cpp file
-    void withdraw(double amount, char * password);
+    bool withdraw(double amount, char * password);
 
     //inline implementation
     void creditInterest()
@@ -47,7 +50,7 @@ public:
     //char * getPassword() {return password;}
 
     //better authenticate
-    void authenticate(char *challengePassword); //I can tell if this password is correct or not
+    bool authenticate(char *challengePassword); //I can tell if this password is correct or not
 
     //no set passoword
 
